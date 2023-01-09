@@ -1,0 +1,23 @@
+{
+  "name": "art-arena",
+  "version": "1.0.0",
+  "description": "A web application built using MERN stack that allows you to play virtual charades with your friends with a drawing canvas.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/N-liraj-khanna/Art-Arena.git"
+  },
+  "author": "N LIRAJKHANNA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/N-liraj-khanna/Art-Arena/issues"
+  },
+  "homepage": "https://github.com/N-liraj-khanna/Art-Arena#readme",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2"
+  }
+}
