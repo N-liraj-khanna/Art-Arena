@@ -1,9 +1,20 @@
-import './App.css';
+import "./App.css";
+
+import Header from "./Components/Header";
+import Settings from "./Components/Settings";
+import Gaming from "./Components/Gaming";
+import GameEnd from "./Components/GameEnd";
+import Footer from "./Components/Footer";
+
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome To Art Arena</h1>
+      <Header />
+      <Settings />
+      <Gaming />
+      <GameEnd />
+      <Footer />
     </div>
   );
 }
