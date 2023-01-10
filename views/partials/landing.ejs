@@ -1,42 +1,42 @@
 <section class="container" id="landing">
-  <div class="row justify-content-center mx-0">
-      <div class="col-lg-6 bg-white rounded p-3">
-          <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="playerName" placeholder="Name" required>
-              <label for="playerName">Name</label>
-          </div>
-          <div class="row justify-content-center mx-0">
-              <div class="col-6 col-sm-5">
-                  <img id="avatar" class="img-fluid rounded-circle mb-4 mb-sm-0"
-                      src="https://api.dicebear.com/5.x/adventurer/svg?seed=Missy" alt="Avatar">
-              </div>
-              <div class="col-sm-7">
-                  <div class="input-group mb-3">
-                      <label class="input-group-text" for="style">Style</label>
-                      <select class="form-select" id="style">
-                          <option value="Missy">Missy</option>
-                          <option value="Oliver">Oliver</option>
-                          <option value="Tiger" selected>Tiger</option>
-                          <option value="Zoe">Zoe</option>
-                          <option value="Sheba">Sheba</option>
-                          <option value="Cookie">Cookie</option>
-                          <option value="Cuddles">Cuddles</option>
-                          <option value="Snowball">Snowball</option>
-                          <option value="Bailey">Bailey</option>
-                      </select>
-                  </div>
-                  <div class="input-group mb-3">
-                      <label class="input-group-text" for="bgColor" class="form-label">Background Color</label>
-                      <input type="color" class="form-control form-control-color" id="bgColor" value="#FFFFFF"
-                          title="Choose your color">
-                  </div>
-              </div>
-              <% if(!roomID) { %>
-                  <button class="btn btn-secondary mt-3" id="createRoom">Create Private Room</button>
-              <% } else { %>
-                  <button class="btn btn-secondary mt-3" id="playGame">Join Room</button>
-              <% } %>
-          </div>
-      </div>
-  </div>
+    <div class="row justify-content-center mx-0">
+        <div class="col-lg-6 bg-white rounded p-3">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="playerName" placeholder="Name" required>
+                <label for="playerName">And are you?</label>
+            </div>
+            <div class="row justify-content-center mx-0">
+                <div class="col-6 col-sm-5">
+                    <img id="avatar" class="img-fluid rounded-circle mb-4 mb-sm-0"
+                        src="https://api.dicebear.com/5.x/adventurer/svg?seed=Missy&backgroundColor=ffffff" alt="Avatar">
+                </div>
+                <div class="col-sm-7">
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="style">Who do you choose?</label>
+                        <select class="form-select" id="style">
+                            <option value="Missy" selected>Missy</option>
+                            <option value="Oliver">Oliver</option>
+                            <option value="Tiger">Tiger</option>
+                            <option value="Zoe">Zoe</option>
+                            <option value="Sheba">Sheba</option>
+                            <option value="Cookie">Cookie</option>
+                            <option value="Cuddles">Cuddles</option>
+                            <option value="Snowball">Snowball</option>
+                            <option value="Bailey">Bailey</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-3">
+                        <label class="input-group-text" for="bgColor" class="form-label">Behind You</label>
+                        <input type="color" class="form-control form-control-color" id="bgColor" value="#FFFFFF"
+                            title="Choose your color">
+                    </div>
+                </div>
+                <% if(!roomID) { %>
+                    <button class="btn btn-secondary mt-3" id="createRoom">Create the party!</button>
+                <% } else { %>
+                    <button class="btn btn-secondary mt-3" id="playGame">You may enter!</button>
+                <% } %>
+            </div>
+        </div>
+    </div>
 </section>

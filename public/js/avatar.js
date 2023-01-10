@@ -4,7 +4,7 @@ const playerName = document.querySelector('#playerName');
 const baseURL = 'https://api.dicebear.com/5.x/adventurer/svg?seed=';
 const my = {
     name: localStorage.getItem('name') || '',
-    avatar: localStorage.getItem('avatar') || 'https://api.dicebear.com/5.x/adventurer/svg?seed=Missy`',
+    avatar: localStorage.getItem('avatar') || 'https://api.dicebear.com/5.x/adventurer/svg?seed=Missy&backgroundColor=fffff',
 };
 
 const settings = document.createElement('script');
@@ -14,28 +14,26 @@ game.src = 'js/game.js';
 document.body.append(settings, game);
 
 function updateAvatar() {
-  const sprite = style.value.toLowerCase();
-  const color = bgColor.value.substring(1);
-  
-  const url = `${baseURL}${sprite}&backgroundColor=${color}`;
-  console.log(url);
-  const newAvatar = document.createElement('img');
-  newAvatar.src = url;
-  newAvatar.alt = 'Avatar';
-  newAvatar.id = 'avatar';
-  newAvatar.classList.add('img-fluid', 'rounded-circle', 'mb-4', 'mb-sm-0');
-  newAvatar.addEventListener('load', () => {
-      document.querySelector('#avatar').replaceWith(newAvatar);
-  });
-  my.avatar = url;
-  my.name = playerName.value;
-  localStorage.setItem('name', playerName.value);
-  localStorage.setItem('avatar', url);
+    const sprite = style.value.toLowerCase();
+    const color = bgColor.value.substring(1);
+    const url = `${baseURL}${sprite}&backgroundColor=${color}`;
+    const newAvatar = document.createElement('img');
+    newAvatar.src = url;
+    newAvatar.alt = 'Avatar';
+    newAvatar.id = 'avatar';
+    newAvatar.classList.add('img-fluid', 'rounded-circle', 'mb-4', 'mb-sm-0');
+    newAvatar.addEventListener('load', () => {
+        document.querySelector('#avatar').replaceWith(newAvatar);
+    });
+    my.avatar = url;
+    my.name = playerName.value;
+    localStorage.setItem('name', playerName.value);
+    localStorage.setItem('avatar', url);
 }
 
 window.onload = () => {
-  if (localStorage.getItem('avatar')) document.querySelector('#avatar').setAttribute('src', localStorage.getItem('avatar'));
-  if (localStorage.getItem('name')) playerName.setAttribute('value', localStorage.getItem('name'));
+    if (localStorage.getItem('avatar')) document.querySelector('#avatar').setAttribute('src', localStorage.getItem('avatar'));
+    if (localStorage.getItem('name')) playerName.setAttribute('value', localStorage.getItem('name'));
 };
 
 style.addEventListener('input', updateAvatar);

@@ -1,9 +1,9 @@
 const socketio = require("socket.io");
 
-const Room = require("./Rooms");
-const Canvas = require("./Canvas");
-const Disconnect = require("./Disconnect");
-const Game = require("./Game");
+const Room = require("./controllers/Rooms");
+const Canvas = require("./controllers/Canvas");
+const Disconnect = require("./controllers/Disconnect");
+const Game = require("./controllers/Game");
 
 module.exports.init = (server) => {
   const io = socketio(server);
