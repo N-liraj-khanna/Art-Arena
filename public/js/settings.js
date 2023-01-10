@@ -6,20 +6,7 @@ const searchParams = new URLSearchParams(params);
 const copyBtn = document.querySelector("#copy");
 let language = "English";
 
-function animateCSS(element, animation, selector = true) {
-  return new Promise((resolve) => {
-    const animationName = `animate__${animation}`;
-    const node = selector ? document.querySelector(element) : element;
 
-    node.classList.add("animate__animated", animationName);
-    function handleAnimationEnd(event) {
-      event.stopPropagation();
-      node.classList.remove("animate__animated", animationName);
-      resolve("Animation ended");
-    }
-    node.addEventListener("animationend", handleAnimationEnd, { once: true });
-  });
-}
 
 function updateSettings(e) {
   e.preventDefault();
@@ -56,7 +43,6 @@ function putPlayer(player) {
     div.appendChild(img);
     div.appendChild(p);
     document.querySelector("#playersDiv").appendChild(div);
-    await animateCSS(div, "fadeInDown", false);
   };
 }
 
@@ -69,10 +55,7 @@ function showCanvasArea() {
   document.body.append(sketchpad);
   sketchpad.addEventListener("load", async () => {
     document.body.append(canvas);
-    animateCSS("#settings>div", "fadeOutLeft");
-    animateCSS("#settings>div:nth-of-type(2)", "fadeOutRight");
     document.querySelector("#gameZone").classList.remove("d-none");
-    await animateCSS("#gameZone", "fadeInDown");
     document.querySelector("#settings").remove();
   });
 }
@@ -83,7 +66,6 @@ socket.on("otherPlayers", (players) =>
 );
 socket.on("disconnection", async (player) => {
   if (document.querySelector(`#skribblr-${player.id}`)) {
-    await animateCSS(`#skribblr-${player.id}`, "fadeOutUp");
     document.querySelector(`#skribblr-${player.id}`).remove();
   }
 });
@@ -96,10 +78,8 @@ if (searchParams.has("id")) {
   document.querySelector("#startGame").setAttribute("disabled", true);
   document.querySelector("#language").setAttribute("disabled", true);
   document.querySelector("#playGame").addEventListener("click", async () => {
-    await animateCSS("#landing>div>div", "hinge");
     document.querySelector("#landing").remove();
     document.querySelector("#settings").classList.remove("d-none");
-    await animateCSS("#settings div", "jackInTheBox");
     my.id = socket.id;
     if (searchParams.has("id")) {
       document.querySelector("#gameLink").value = `${
@@ -123,11 +103,8 @@ if (searchParams.has("id")) {
     .querySelector("#language")
     .addEventListener("change", updateSettings);
   document.querySelector("#createRoom").addEventListener("click", async () => {
-    await animateCSS("#landing>div>div", "hinge");
     document.querySelector("#landing").remove();
     document.querySelector("#settings").classList.remove("d-none");
-    animateCSS("#settings div", "jackInTheBox");
-    await animateCSS("#settings>div:nth-of-type(2)", "jackInTheBox");
     my.id = socket.id;
     socket.emit("newPrivateRoom", my);
     socket.on("newPrivateRoom", (data) => {

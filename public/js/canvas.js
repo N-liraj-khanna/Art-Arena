@@ -126,6 +126,5 @@ socket.on('drawing', ({
 });
 socket.on('disableCanvas', async () => {
     pad.setReadOnly(true);
-    await animateCSS('#tools', 'fadeOutDown');
     document.querySelector('#tools').classList.add('d-none');
 });

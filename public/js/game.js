@@ -49,7 +49,6 @@ function startTimer(ms) {
       document.querySelector('#clock').textContent = secs;
       if (hints[0] && wordP && secs === hints[0].displayTime && pad.readOnly) {
           wordP.textContent = hints[0].hint;
-          animateCSS(wordP, 'tada', false);
           hints.shift();
       }
       secs--;
@@ -129,7 +128,6 @@ socket.on('chooseWord', async ([word1, word2, word3]) => {
   document.querySelector('#wordDiv').innerHTML = '';
   document.querySelector('#wordDiv').append(p, btn1, btn2, btn3);
   document.querySelector('#tools').classList.remove('d-none');
-  await animateCSS('#tools', 'fadeInUp');
   document.querySelector('#clock').textContent = 0;
   clearInterval(timerID);
   clock.stop();
@@ -167,7 +165,6 @@ socket.on('endGame', async ({ stats }) => {
 
   clearInterval(timerID);
   document.querySelector('#clock').textContent = 0;
-  await animateCSS('#gameZone', 'fadeOutLeft');
   document.querySelector('#gameZone').remove();
 
   players.forEach((playerID) => {
@@ -199,7 +196,6 @@ socket.on('endGame', async ({ stats }) => {
   });
   clock.stop();
   document.querySelector('#gameEnded').classList.remove('d-none');
-  animateCSS('#gameEnded>div', 'fadeInRight');
 });
 
 // eslint-disable-next-line func-names
