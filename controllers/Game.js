@@ -55,7 +55,7 @@ class Game {
     async giveTurnTo(players, i) {
         const { io, socket } = this;
         const { roomID } = socket;
-        const { time } = games[roomID];
+        const { time } = games[roomID]?games[roomID]:1;
         const player = players[i];
         const prevPlayer = players[(i - 1 + players.length) % players.length];
         const drawer = io.of('/').sockets.get(player);

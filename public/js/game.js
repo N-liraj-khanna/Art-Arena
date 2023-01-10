@@ -131,6 +131,7 @@ socket.on('chooseWord', async ([word1, word2, word3]) => {
     document.querySelector('#tools').classList.remove('d-none');
     document.querySelector('#clock').textContent = 0;
     clearInterval(timerID);
+    console.log(clock);
     clock.stop();
     pickWordID = setTimeout(() => chooseWord(word2), 15000);
 });

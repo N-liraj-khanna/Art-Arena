@@ -27,10 +27,10 @@ function putPlayer(player) {
     const text = document.createTextNode(player.name);
     div.id = `skribblr-${player.id}`;
     p.appendChild(text);
-    p.classList.add('text-center');
+    p.classList.add('text-center' , 'text-dark');
     img.src = player.avatar;
     img.alt = player.name;
-    img.classList.add('img-fluid', 'rounded-circle');
+    img.classList.add('img-fluid', 'rounded-circle', 'text-secondary');
     div.classList.add('col-4', 'col-sm-3', 'col-md-4', 'col-lg-3');
     img.onload = async () => {
         div.appendChild(img);
