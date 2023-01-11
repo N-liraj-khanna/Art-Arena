@@ -9,6 +9,7 @@
 
 <p align="center">
   <a href="#introduction">Introduction</a> •
+  <a href="#application-in-action">Application in Action</a> •
   <a href="#installation">Installation</a> •
   <a href="#application-structure">Application Structure</a> •
   <a href="#key-features">Key Features</a> •
@@ -22,6 +23,16 @@
 Welcome to Art Arena, this is an application that allows you to play virtual charades online with your friends. One person get to create a room by selecting their avatar and background. After creation of the room, there will be a link generated, the creater can share the link to their friends and wait for them to join. Anyone with the link can join. Once all the members joined, the creator is the only person allowed to start and do the respective setup of the game like custom words, language selection, probablity, rounds and duration per question.
 
 Once the game starts, the creator will be the first one to go, he/she must select a  word of three given by the application. And they can to draw using different colors, erase them etc. Respectively other's have to guess the word in the chatbox, anyone can see any text, except for the correct answer. Also the application assist by measuring the distance of the correctness of answer. Once guessed correct, your points will be increased. After the respective number of rounds the scorecard of who won will be generated. This game is  inspired in the Covid period lockdown to still interact and have fun with friends virtually.
+
+## Application in Action
+
+![1.png](Screenshots/1.jpg)
+
+![2.png](Screenshots/2.jpg)
+
+![3.png](Screenshots/3.jpg)
+
+![4.png](Screenshots/4.jpg)
 
 ## Installation
 
