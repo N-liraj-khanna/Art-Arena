@@ -1,114 +1,149 @@
 <h1 align="center">
   <br>
-  <img src="/Frontend/assets/icons/logo_app.png" alt="Blind-AI" width="200">
+  <img src="./public/images/logo.png" alt="Blind-ai" width="150">
   <br>
-  Blind AI
+  Welcome to Art Arena 👋
   <br>
 </h1>
-
-<h4 align="center">An app to make the lives of visually impaired people a little more ordinary.</h4>
-
+<h4 align="center">A web application built using Node JS with Socket.IO that allows you to play virtual charades with your friends using a drawing canvas.</h4>
 
 <p align="center">
   <a href="#introduction">Introduction</a> •
+  <a href="#application-in-action">Application in Action</a> •
   <a href="#installation">Installation</a> •
   <a href="#application-structure">Application Structure</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#credits">Credits</a> •
-  <a href="#support">Support</a> •
-  <a href="#contributors">Contributors</a> •
-  <a href="#license">License</a>
-</p>
-
-<p align="center">
-<img width = 30% src="https://user-images.githubusercontent.com/73516876/193432075-1e0bcc3c-0681-441d-bab5-4d185f25c974.jpeg" alt="App">
+  <a href="#author">Author</a>
 </p>
 
 ## Introduction
 
-The development of tools and technology hasn't resulted in the development of applications that could aid those with visual impairments. With the development of Data Modelling techniques, which can be used to give even basic computers a bit of "intelligence," and the ease of accessibility, this "intelligence" can be extended to our smartphones to aid those who are blind in navigating their surroundings and going about their daily lives. By utilising the power of Deep Learning, which can be made accessible even on low-end devices with a clear User-Interface that would precisely allow them to better grasp the world around, our application seeks to close the gap between them and the visible world.
+Welcome to Art Arena, this is an application that allows you to play virtual charades online with your friends. One person get to create a room by selecting their avatar and background. After creation of the room, there will be a link generated, the creater can share the link to their friends and wait for them to join. Anyone with the link can join. Once all the members joined, the creator is the only person allowed to start and do the respective setup of the game like custom words, language selection, probablity, rounds and duration per question.
 
-This app enables the community of blind and visually impaired people to correctly identify objects they come across in everyday life without the need for sighted assistance.
+Once the game starts, the creator will be the first one to go, he/she must select a  word of three given by the application. And they can to draw using different colors, erase them etc. Respectively other's have to guess the word in the chatbox, anyone can see any text, except for the correct answer. Also the application assist by measuring the distance of the correctness of answer. Once guessed correct, your points will be increased. After the respective number of rounds the scorecard of who won will be generated. This game is  inspired in the Covid period lockdown to still interact and have fun with friends virtually.
+
+## Application in Action
+
+![1.png](Screenshots/1.jpg)
+
+![2.png](Screenshots/2.jpg)
+
+![3.png](Screenshots/3.jpg)
+
+![4.png](Screenshots/4.jpg)
 
 ## Installation
 
-Install with pip:
+Install with NPM:
 
 ```
-$ pip install -r requirements.txt
+Make sure Node JS is installed
+
+> npm install
 ```
 
 ## Application Structure
 
 ```
 .
-blind_ai/
-├─ Frontend/
-├─ calibration/
-│  ├─ Ref_image.png
-├─ currency-detection/
-│  ├─ currencies/
-├─ yolo_v3/
-│  ├─ coco.names
-│  ├─ yolov3-tiny.cfg
-│  ├─ yolov3-tiny.weights
-├─ app.py
-├─ curr_det.py
-├─ requirements.txt
-├─ utils.py
-├─ .gitignore
-├─ Procfile
+└── Art Arena/
+    ├── controllers/
+    │   ├── Canvas.js
+    │   ├── Disconnect.js
+    │   ├── Game.js
+    │   ├── helpers.js
+    │   └── Rooms.js
+    ├── node_modules
+    ├── public/
+    │   ├── css/
+    │   │   └── index.css
+    │   ├── images
+    │   └── js/
+    │       ├── avatar.js
+    │       ├── canvas.js
+    │       ├── game.js
+    │       ├── settings.js
+    │       └── transliterate.js
+    ├── views/
+    │   ├── partials/
+    │   │   ├── game-end.ejs
+    │   │   ├── game.ejs
+    │   │   ├── landing.ejs
+    │   │   ├── settings.js
+    │   │   └── tools.ejs
+    │   └── index.ejs
+    ├── .gitignore
+    ├── app.js
+    ├── config.js
+    ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    ├── sockets.js
+    └── words.json
 ```
 
 ## Key Features
 
-⭐️ SOS - Quickly send alerts to your emergency contacts.
+⭐️ Draw in Canvas - Allows you to draw in a canvas and immediately let others view the broadcasting.
 
-⭐️ Object detection - Detects the object in front of you and the distance you are from it.
+⭐️ Words distance measure - Calculates the distance and let you know how close you're to the guessing game.
 
-⭐️ Currency detection - Detects currecny denominations.
+⭐️ Customize Avatar - Choose who you wanna be with your backgorund color.
 
-⭐️ Read text - Reads the text for you.
+⭐️ Set Language, words & probablity - Choose the language and if needed custom words you want the application to suggest with the probablity of it occuring.
+
+⭐️ Translate Text - In the chatbox, it shows you translated suggested words for non-native english speakers.
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Flutter](https://flutter.dev/).
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node JS](https://nodejs.org/).
 
 From your command line:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/Nilavan/Blind-AI-Backend/
+Make sure Node JS is installed
 
-# Go into the repository
-$ cd Blind-AI-Backend
+# Clone the application
+> git clone https://github.com/N-liraj-khanna/Art-Arena.git
 
-# Install dependencies
-$ pip install -r requirements.txt
+# Enter into the directory
+> cd Art-Arena
 
-# Run the app
-$ flask run
+# Install the necessary packages
+> npm install
+
+# Enjoy the application
+> npm start
 ```
+The application will be running in http://localhost:3000/.
 
 ## Credits
 
 This software uses the following open source packages:
 
-- [Flutter](https://flutter.dev/)
-- [Python](https://www.python.org/)
-- [Python Anywhere](https://www.pythonanywhere.com/)
-- [Twilio](https://www.twilio.com/)
-- [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+- [Node JS](https://nodejs.org/)
+- [Socket.IO](https://socket.io)
+- [EJS](https://www.ejs.co/)
+- [Express](https://www.expressjs.com/)
+- [Bootsrap](https://www.getbootstrap.com/)
+- [Javascript](https://www.javascript.com/)
 
 
 
-## 🤝 Contributors
+## Author
 
-[@N-liraj-khanna](https://github.com/N-liraj-khanna) &nbsp;&middot;&nbsp;
-[@ajith-m-doodlebug](https://github.com/ajith-m-doodlebug) &nbsp;&middot;&nbsp;
-[@calicartels](https://github.com/calicartels/) &nbsp;&middot;&nbsp;
-[@Nilavan](https://github.com/Nilavan) &nbsp;&middot;&nbsp;
+
+👤 **N Liraj Khanna**
+
+* Website: https://github.com/N-liraj-khanna
+* Github: [@N-liraj-khanna](https://github.com/N-liraj-khanna)
+* LinkedIn: [@https://www.linkedin.com/in/n-lirajkhanna/](https://www.linkedin.com/in/n-lirajkhanna/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />
 
 ## Show your support
 
