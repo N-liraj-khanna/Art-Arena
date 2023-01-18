@@ -1,5 +1,5 @@
 /* global games */
-const { getPlayersCount } = require('./helpers');
+const { getPlayersCount } = require('./Helpers');
 
 class Disconnect {
     constructor(io, socket) {
