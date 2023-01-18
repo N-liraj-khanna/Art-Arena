@@ -2,11 +2,13 @@
 const { readFileSync } = require('fs');
 const Chance = require('chance');
 const GraphemeSplitter = require('grapheme-splitter');
+const path = require('path');
 
 const chance = new Chance();
 const splitter = new GraphemeSplitter();
-const words = JSON.parse(readFileSync('words.json').toString('utf-8'));
-console.log(words);
+const words_data = path.join(path.dirname(__dirname), 'words.json');
+const words = JSON.parse(readFileSync(words_data).toString('utf-8'));
+console.log(words_data);
 
 function getScore(startTime, roundtime) {
     const now = Date.now() / 1000;
