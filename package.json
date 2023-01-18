@@ -4,7 +4,7 @@
   "description": "A web application built using MERN stack that allows you to play virtual charades with your friends with a drawing canvas.",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node app.js",
     "dev": "node app.js"
   },
   "engines": {
