@@ -8,7 +8,6 @@ const chance = new Chance();
 const splitter = new GraphemeSplitter();
 const words_data = path.join(path.dirname(__dirname), 'words.json');
 const words = JSON.parse(readFileSync(words_data).toString('utf-8'));
-console.log(words_data);
 
 function getScore(startTime, roundtime) {
     const now = Date.now() / 1000;
