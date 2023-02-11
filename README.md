@@ -41,7 +41,8 @@ Install with NPM:
 ```
 Make sure Node JS is installed
 
-> npm install
+> node --version
+> npm --version
 ```
 
 ## Application Structure
